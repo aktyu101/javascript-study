@@ -66,11 +66,9 @@ console.log('과제7:', arr2);
 /**
  * 8. { x: 10, y: 10 } 객체 값을 가진 원본 객체 a가 있습니다. 원본 객체 a를 바꾸지 말고 객체를 복사하여 x와 y를 각각 20으로 변경해서 출력하세요.
  */
-const a = {x: 10, y: 10};
-const a2 = a;
+const a = { x: 10, y: 10 };
+const a2 = { ...a, x: 20, y: 20 };
 
-a2.x = 20;
-a2.y = 20;
 
 console.log('과제8:', a2);
 
@@ -78,8 +76,12 @@ console.log('과제8:', a2);
  * 9. [1, 2, 3, 4, 5] 배열 값을 가진 원본 배열 a가 있습니다. 원본 배열 a를 바꾸지 말고 배열을 복사하여 배열의 값을 [6, 7, 8, 9, 10]으로 변경하세요.
  */
 const a3 = [1,2,3,4,5];
-const a4 = a3;
-a4[0,1,2,3,4] = 6,7,8,9,10;
+const a4 = [...a3];
+a4[0] = 6;
+a4[1] = 7;
+a4[2] = 8;
+a4[3] = 9;
+a4[4] = 10;
 console.log('과제9:', a4);
 
 /**
@@ -94,25 +96,24 @@ judy의 age는 26이고 country는 ‘busan’입니다.
 최종적으로 출력해야 하는 정보는 kein과 judy 나이를 합산한 값입니다.
  */
 
-const info1 = {
-    kein: {
+const info1 = { // aaa
+    date: '2022-11-05',
+    kein: { // bbb
         age : 28,
         country : 'seoul',
     },
-    judy: {
+    judy: { // ccc
         age: 26,
         country: 'busan',
     },
 };
-info1.data = '2022-11-05';
 console.log(info1);
 
-const info2 = info1;
-info2.data = '2022-12-10'
-info2.kein.age = 32;
+const info2 = { ...info1, kein: { ...info1.kein } };
+info2.date = '2022-12-10';
 
 console.log(info2);
 
-console.log('judy와 kein의 나이를 합산한 값:', info1.kein.age + info2.judy.age);
+console.log('judy와 kein의 나이를 합산한 값:', info2.kein.age + info2.judy.age);
 
 console.log("** 1210 과제 - end **")

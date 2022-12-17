@@ -1,7 +1,1 @@
-import "./1210/01.js"
-import "./1210/02.js"
-import "./1210/03.js"
-import "./1210/04.js"
-import "./1210/05.js"
-import "./1210/06.js"
-import "./1210_add/01.js"
+import "./1217/index.js"
