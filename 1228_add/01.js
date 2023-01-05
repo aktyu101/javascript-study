@@ -1,11 +1,97 @@
-console.log('** 1224 과제 **')
 
-window.addEventListener('load', => {
-    //5*5
-    //i=1, (i++)*5 삼각형
-    //i=5, (i--)*5 역삼각형
-    //정삼각형
-    //역정삼각형
-    //다이아몬드
+/**
+ * 1228 과제
+ */
+window.addEventListener("load", () => {
+    document.write("별찍기", "<br />");
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++){
+            document.write("*");
+        }
+        document.write("<br />")
+    }
+    
+    document.write("<br />", "--------------------------------", "<br />");
+
+    document.write("삼각형", "<br />");
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++){
+            document.write("*");
+        };
+        document.write("<br />")
+    }
+
+    document.write ("<br />", "----------------------------------", "<br />");
+    
+    document.write("역삼각형", "<br />");
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < i; j++) {
+            document.write("&nbsp");
+        };
+        for (let j = 5; j > i; j--){
+            document.write("*");
+        };
+        document.write("<br />")
+    }
+    
+    document.write ("<br />", "----------------------------------", "<br />")
+    
+    document.write("정삼각형", "<br />");
+    for(let i = 0; i < 5; i++) {
+        for(let j = 4; j > i; j--) {
+            document.write("&nbsp");
+        }
+        for(let j = 0; j <= i; j++) {
+            document.write("*");
+        }
+        for(let j = 0; j < i; j++) {
+            document.write("*");
+        }
+        document.write("<br />");
+    }
+
+    document.write ("<br />", "----------------------------------", "<br />")
+
+    document.write("역정삼각형", "<br />");
+    for(let i = 0; i < 5; i++) {
+        for(let j = 0; j < i; j++) {
+            document.write("&nbsp");
+        }
+        for(let j = 5; j > i; j--) {
+            document.write("*");
+        }
+        for(let j = 4; j > i; j--) {
+            document.write("*");
+        }
+        document.write("<br />");
+    }
+
+    document.write ("<br />", "----------------------------------", "<br />");
+
+    document.write("마름모", "<br />");
+    for(let i = 0; i < 4; i++) {
+        for(let j = 4; j > i; j--) {
+            document.write("&nbsp");
+        }
+        for(let j = 0; j <= i; j++) {
+            document.write("*");
+        }
+        for(let j = 0; j < i; j++) {
+            document.write("*");
+        }
+        document.write("<br />");
+    }
+    for(let i = 0; i < 5; i++) {
+        for(let j = 0; j < i; j++) {
+            document.write("&nbsp");
+        }
+        for(let j = 5; j > i; j--) {
+            document.write("*");
+        }
+        for(let j = 4; j > i; j--) {
+            document.write("*");
+        }
+        document.write("<br />");
+    }
 });
-console.log('** 1224 과제 - end **')
+

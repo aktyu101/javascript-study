@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul,ol,dl{
+    list-style: none;
+}
+#calcWrap{
+    width: 315px;
+    height: 490px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #eee;
+    transform: translateY(27.5%);
+    padding: 20px 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+#calcBtn{
+    display: flex;
+    justify-content: space-between;
+}
+#calcBtn > button{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: solid 1px rgb(119, 145, 216);
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+#calcBtn > button:hover, #calcCenter .calcRight > p:hover{
+    box-shadow: 1px 1px 1px rgb(186, 186, 194);
+}
+#calcCenter{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    display: flex;
+}
+#calcCenter .calcLeft{
+    width: 240px;
+    height: 300px;
+    display: flex;
+    flex-flow: row wrap;
+}
+#calcCenter .calcLeft > .num{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    line-height: 70px;
+    margin-right: 4px;
+    box-sizing: border-box;
+    background-color: rgb(119, 145, 216);
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+#calcCenter .calcLeft > .num:hover{
+    box-shadow: 1px 1px 1px rgb(99, 106, 180);
+}
+#calcCenter .calcLeft > .num.x2{
+    width: 144px;
+}
+#calcCenter .calcRight > p{
+    height: 218px;
+    line-height: 220px;
+    display: block;
+    width: 70px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+    border: solid 1px rgb(119, 145, 216);
+    font-weight: 900;
+    color: rgb(121, 121, 121);
+}
+#calcResult{
+    width: 300px;
+    height: 100px;
+    display: flex;
+}
+#calcResult > input{
+    width: 300px;
+    float: left;
+    height: 70px;
+    border: none;
+    border: solid 1px rgb(119, 145, 216);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+#calcCenter .calcRight > .reset{
+    width: 70px;
+    border: solid 1px rgb(119, 145, 216);
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 70px;
+    margin-top: 5px;
+    line-height: 68px;
+    background-color: #fff;
+}
+#log{
+    text-align: center;
+}

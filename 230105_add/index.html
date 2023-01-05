@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <div id="log">log : </div>
+    <div id="calcWrap">
+        <div id="calcBtn">
+            <button type="button" class="divide">/</button>
+            <button type="button" class="multi">*</button>
+            <button type="button" class="minus">-</button>
+            <button type="button" class="plus">+</button>
+        </div>
+        <div id="calcCenter">
+            <form name="calcNumber" class="calcLeft">
+                <input type="button" value="7" class="num">
+                <input type="button" value="8" class="num">
+                <input type="button" value="9" class="num m_none">
+                <input type="button" value="4" class="num">
+                <input type="button" value="5" class="num">
+                <input type="button" value="6" class="num m_none">
+                <input type="button" value="1" class="num">
+                <input type="button" value="2" class="num">
+                <input type="button" value="3" class="num m_none">
+                <input type="button" value="0" class="num x2">
+                <input type="button" value="." class="num"> 
+            </form>
+            <div class="calcRight">
+                <p class="multi">
+                    enter
+                </p>
+                <p class="reset">A/C</p>
+            </div>
+        </div>
+        <div id="calcResult">
+            <input type="text" class="input">
+        </div>
+    </div>
+</body>
+</html>
