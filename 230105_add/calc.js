@@ -29,10 +29,10 @@ const finishCalcrator = (num) => {
     input.value = 0;
 };
 
-// const finishCalc = (num) => {
-//     result.innerHTML = num;
-//     input.value = 0;
-// };
+const finishCalc = (num) => {
+    result.innerHTML = num;
+    input.value = 0;
+};
 
 const plus = () => {
     num = num + Number(input.value);
@@ -61,82 +61,82 @@ const allReset = () => {
 };
 
 
-// const input7 = () => {
-//     if (num === 0) {
-//         input.value = num = 7;
-//     }else {
-//         input.value = num += 7;
-//     };
-// };
-// const input8 = () => {
-//     if (num === 0) {
-//         input.value = num = 8;
-//     }else {
-//         input.value += num = 8;
-//     };
-// };
-// const input9 = () => {
-//     if (num === 0) {
-//         input.value = num = 9;
-//     }else {
-//         input.value += num = 9;
-//     };
-// };
-// const input4 = () => {
-//     if (num === 0) {
-//         input.value = num = 4;
-//     }else {
-//         input.value += num = 4;
-//     };
-// };
-// const input5 = () => {
-//     if (num === 0) {
-//         input.value = num = 5;
-//     }else {
-//         input.value += num = 5;
-//     };
-// };
-// const input6 = () => {
-//     if (num === 0) {
-//         input.value = num = 6;
-//     }else {
-//         input.value += num = 6;
-//     };
-// };
-// const input1 = () => {
-//     if (num === 0) {
-//         input.value = num = 1;
-//     }else {
-//         input.value += num = 1;
-//     };
-// };
-// const input2 = () => {
-//     if (num === 0) {
-//         input.value = num = 2;
-//     }else {
-//         input.value += num = 2;
-//     };
-// };
-// const input3 = () => {
-//     if (num === 0) {
-//         input.value = num = 3;
-//     }else {
-//         input.value += num = 3;
-//     };
-// };
+const input7 = () => {
+    if (num === 0) {
+        input.value = num = 7;
+    }else {
+        input.value = num += 7;
+    };
+};
+const input8 = () => {
+    if (num === 0) {
+        input.value = num = 8;
+    }else {
+        input.value += num = 8;
+    };
+};
+const input9 = () => {
+    if (num === 0) {
+        input.value = num = 9;
+    }else {
+        input.value += num = 9;
+    };
+};
+const input4 = () => {
+    if (num === 0) {
+        input.value = num = 4;
+    }else {
+        input.value += num = 4;
+    };
+};
+const input5 = () => {
+    if (num === 0) {
+        input.value = num = 5;
+    }else {
+        input.value += num = 5;
+    };
+};
+const input6 = () => {
+    if (num === 0) {
+        input.value = num = 6;
+    }else {
+        input.value += num = 6;
+    };
+};
+const input1 = () => {
+    if (num === 0) {
+        input.value = num = 1;
+    }else {
+        input.value += num = 1;
+    };
+};
+const input2 = () => {
+    if (num === 0) {
+        input.value = num = 2;
+    }else {
+        input.value += num = 2;
+    };
+};
+const input3 = () => {
+    if (num === 0) {
+        input.value = num = 3;
+    }else {
+        input.value += num = 3;
+    };
+};
 
 
 
-//숫자
-// Btn7.addEventListener("click", input7);
-// Btn8.addEventListener("click", input8);
-// Btn9.addEventListener("click", input9);
-// Btn4.addEventListener("click", input4);
-// Btn5.addEventListener("click", input5);
-// Btn6.addEventListener("click", input6);
-// Btn1.addEventListener("click", input1);
-// Btn2.addEventListener("click", input2);
-// Btn3.addEventListener("click", input3);
+숫자
+Btn7.addEventListener("click", input7);
+Btn8.addEventListener("click", input8);
+Btn9.addEventListener("click", input9);
+Btn4.addEventListener("click", input4);
+Btn5.addEventListener("click", input5);
+Btn6.addEventListener("click", input6);
+Btn1.addEventListener("click", input1);
+Btn2.addEventListener("click", input2);
+Btn3.addEventListener("click", input3);
 
 //calc
 plusBtn.addEventListener("click", plus);
