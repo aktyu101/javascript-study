@@ -10,7 +10,7 @@ ul,ol,dl{
 }
 #calcWrap{
     width: 315px;
-    height: 490px;
+    height: 520px;
     margin: 0 auto;
     text-align: center;
     border-radius: 5px;
@@ -82,7 +82,7 @@ ul,ol,dl{
 }
 #calcResult{
     width: 300px;
-    height: 100px;
+    height: 80px;
     display: flex;
 }
 #calcResult > input{
@@ -108,5 +108,5 @@ ul,ol,dl{
     background-color: #fff;
 }
 #log{
-    text-align: center;
+    text-align: right;
 }
