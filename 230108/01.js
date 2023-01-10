@@ -55,10 +55,6 @@ ul.style = ulStyle;
 // });
 
 //할 일 추가하기
-if(btn.click == 5){
-    console.log("그만써");
-};
-
 btn.addEventListener("click", e => {
     e.preventDefault();   
     let list = input.value;
@@ -71,9 +67,10 @@ btn.addEventListener("click", e => {
     }
     input.value = "";
     console.log(num);
-    //총 리스트 개수 증가
+    //총 리스트 개수 +1
+    //if
 });
-//list 개수
-
 
 //클릭개수 제한
+//전체삭제
+//삭제
