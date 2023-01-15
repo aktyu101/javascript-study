@@ -1,5 +1,5 @@
 //timer
-//interval 시간마다
+//setinterval 시간마다
 //setTimeOut
 
 setTimeout(() => {
