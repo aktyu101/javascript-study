@@ -1,6 +1,5 @@
 //쇼핑 항목 표시, 제어를 하는 클로저 함수
-//item row
-import { items } from "./item.js"; //쇼핑 항목 표시, 제어를 하는 클로저 함수
+import { defaultNum, items } from "./item.js"; //쇼핑 항목 표시, 제어를 하는 클로저 함수
 
 export function addItem() {
   const btnStyle = `
@@ -11,11 +10,13 @@ export function addItem() {
   line-height: 50px;
   border: solid 1px #eee;
   `;
-  for (let i = 0; i < 5; i++) {
+
+  for (let i = 0; i < items.length; i++) {
+    //tbody 생성
     const tbody = document.createElement("tbody");
     tbody.setAttribute("id", "itemlist");
     cartWrap.append(tbody);
-
+    //td생성
     const td = document.createElement("td");
     tbody.append(td);
     td.innerHTML = items[i].itemName;
@@ -29,14 +30,8 @@ export function addItem() {
     td3.innerHTML = items[i].amount;
 
     const td4 = document.createElement("button");
-    const td5 = document.createElement("button");
     td4.setAttribute("type", "button");
-    td5.setAttribute("type", "button");
-    tbody.append(td4, td5);
+    tbody.append(td4);
     td4.innerHTML = "+";
-    td5.innerHTML = "-";
-
-    //버튼 클릭 이벤트
-    td4.addEventListener("click", function () {});
   }
 }
