@@ -85,3 +85,6 @@ export default function cart() {
 
 //총금액과 추가했을때 총금액도 같이 늘어나게 과제!
 //itterator
+
+//총금액과 추가했을때 총금액도 같이 늘어나게 과제!
+//itterator
