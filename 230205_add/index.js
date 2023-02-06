@@ -30,3 +30,7 @@ people.forEach((value, index) => {
 people.forEach((value, index) => {
   console.log("forEach", index, value);
 });
+
+//filter
+const filter = people.filter((value) => value.age < 20);
+console.log("filter", filter);
