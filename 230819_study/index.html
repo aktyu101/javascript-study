@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="./index.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #progresbar {
+        background-color: #eee;
+        width: 300px;
+        height: 20px;
+        margin: 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      #handler {
+        background-color: #000;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+      }
+      #ptgdiv {
+        background-color: #000;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progresbar">
+      <div id="ptgdiv"></div>
+      <div id="handler"></div>
+    </div>
+    <span id="percentage"></span>
+  </body>
+  <script>
+    const bar = document.querySelector("#progresbar");
+    const handler = document.querySelector("#handler");
+    const percentage = document.querySelector("#percentage");
+    const ptgdiv = document.querySelector("#ptgdiv");
+    const offsetBar = bar.getBoundingClientRect();
+    const offsetHandler = handler.getBoundingClientRect();
+    const maxMoveX = offsetBar.width - offsetHandler.width;
+
+    console.log("offsetbar", offsetBar);
+    console.log("offsethandler", offsetHandler);
+
+    let isDragStart = false;
+
+    window.addEventListener("load", () => {
+      percentage.innerHTML = "0%";
+    });
+
+    handler.addEventListener("mousedown", () => {
+      console.log("mouseDown");
+      isDragStart = true;
+    });
+    handler.addEventListener("mouseup", () => {
+      console.log("mouseUp");
+      isDragStart = false;
+    });
+
+    bar.addEventListener("mouseleave", () => {
+      isDragStart = false;
+    });
+
+    bar.addEventListener("mousemove", (event) => {
+      if (!isDragStart) return;
+      let x = event.x - offsetBar.x - offsetHandler.width / 2;
+      //   console.log("x", x);
+      if (x <= 0) x = 0;
+      if (x >= maxMoveX) x = maxMoveX;
+      //넘어가지 않게 처리
+      const ptg = parseInt((x / maxMoveX) * 100);
+      percentage.innerHTML = `${ptg}%`;
+      handler.style.transform = `translateX(${x}px)`;
+      //비용소모를 줄이기위해 transform 사용, gpu 소모
+      ptgdiv.style.width = `${ptg}%`;
+    });
+  </script>
+</html>
