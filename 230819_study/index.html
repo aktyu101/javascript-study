@@ -78,8 +78,9 @@
       if (x <= 0) x = 0;
       if (x >= maxMoveX) x = maxMoveX;
       //넘어가지 않게 처리
-      const ptg = parseInt((x / maxMoveX) * 100);
-      percentage.innerHTML = `${ptg}%`;
+      const ptg = (x / maxMoveX) * 100;
+      const intPtg = parseInt((x / maxMoveX) * 100);
+      percentage.innerHTML = `${intPtg}%`;
       handler.style.transform = `translateX(${x}px)`;
       //비용소모를 줄이기위해 transform 사용, gpu 소모
       ptgdiv.style.width = `${ptg}%`;

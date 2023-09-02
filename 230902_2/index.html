@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="text">hello World</div>
+    <script>
+      function setTextColor(matches) {
+        const text = document.querySelector(`#text`);
+        text.style.color = matches ? `#eee` : `red`;
+      }
+
+      const media = window.matchMedia(`(max-width: 800px)`);
+      setTextColor(media.matches);
+      media.onchange = (event) => {
+        console.log("event", event);
+        console.log("matches", event.matches);
+        setTextColor(event.matches);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="./index.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #progresbar {
+        background-color: #eee;
+        width: 500px;
+        height: 500px;
+        margin: 100px;
+        position: relative;
+        background-image: url(../img2.png);
+      }
+      #handler {
+        background-color: rgba(203, 203, 203, 0.5);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 2;
+      }
+      #handler2 {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background-color: #000;
+        border: solid 1px #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      #ptgdiv {
+        background-color: #000;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+      }
+      #vertical-line {
+        height: 100%;
+        width: 1px;
+        background-color: #000;
+        position: absolute;
+        transform: translate(0, 0);
+        z-index: 1;
+      }
+      #scale-bar {
+        background-color: rgb(66, 146, 146);
+        height: 100%;
+        width: 0;
+        background-image: url(../img1.png);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progresbar">
+      <!-- <div id="ptgdiv"></div> -->
+      <div id="handler">
+        <div id="handler2"></div>
+      </div>
+      <div id="vertical-line"></div>
+      <div id="scale-bar"></div>
+    </div>
+  </body>
+  <script>
+    const bar = document.querySelector("#progresbar");
+    const handler = document.querySelector("#handler");
+    const ptgdiv = document.querySelector("#ptgdiv");
+    const verticalLine = document.querySelector("#vertical-line");
+    const scaleBar = document.querySelector("#scale-bar");
+    const offsetVerticalLine = verticalLine.getBoundingClientRect(); //위치정보 가져오기
+    const offsetBar = bar.getBoundingClientRect();
+    const offsetHandler = handler.getBoundingClientRect();
+    const maxMoveX = offsetBar.width;
+    const vertcalMaxMoveX =
+      offsetBar.width - offsetHandler.width / 2 - offsetVerticalLine.width / 2;
+
+    console.log("offsetbar", offsetBar);
+    console.log("offsethandler", offsetHandler);
+
+    let isDragStart = false;
+
+    // window.addEventListener("load", () => {
+    //   percentage.innerHTML = "0%";
+    // });
+
+    handler.addEventListener("mousedown", () => {
+      console.log("mouseDown");
+      isDragStart = true;
+    });
+    handler.addEventListener("mouseup", () => {
+      console.log("mouseUp");
+      isDragStart = false;
+    });
+
+    bar.addEventListener("mouseleave", () => {
+      isDragStart = false;
+    });
+
+    bar.addEventListener("mouseup", () => {
+      isDragStart = false;
+    });
+
+    bar.addEventListener("mousemove", (event) => {
+      if (!isDragStart) return;
+      let x = event.x - offsetBar.x;
+      //   console.log("x", x);
+      if (x <= 0) x = 0;
+      if (x >= maxMoveX) x = maxMoveX;
+      //넘어가지 않게 처리
+      const ptg = (x / maxMoveX) * 100;
+      // const intPtg = parseInt((x / maxMoveX) * 100);
+      handler.style.transform = `translate(${x - 25}px, -50%)`;
+      //비용소모를 줄이기위해 transform 사용, gpu 소모
+      // ptgdiv.style.width = `${ptg}%`;
+      verticalLine.style.transform = `translate(${x}px, 0)`;
+      scaleBar.style.width = `${x}px`;
+    });
+  </script>
+</html>
