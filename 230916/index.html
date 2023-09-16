@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="height: 100%; background-color: #ccc">
+      <div id="in_box" style="background-color: #000; width: 20px"></div>
+    </div>
+    <script>
+      const inBox = document.querySelector("#in_box");
+      window.addEventListener(`load`, (event) => {
+        const offset = document.body.getBoundingClientRect();
+        //dom 위치값, 사이즈
+        console.log("offset", offset);
+        inBox.style.height = `${offset.height}px`;
+      });
+      window.addEventListener(`resize`, (event) => {
+        const offset = document.body.getBoundingClientRect();
+        console.log("offset height", offset.height);
+        console.log("resize", event);
+        inBox.style.height = `${offset.height}px`;
+      });
+    </script>
+  </body>
+</html>

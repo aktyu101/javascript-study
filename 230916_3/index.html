@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //promise
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("time end"), 2000);
+        // resolve(true);
+      });
+      promise.then((resolve) => {
+        console.log("promise resolve", resolve);
+        console.log("finish");
+        //finish 시점 제어 가능
+      });
+      console.time("for each");
+      let count = 0;
+      while (count < 2000000000) {
+        count++;
+      }
+      console.log("foreach end");
+      console.timeEnd("for each");
+    </script>
+  </body>
+</html>

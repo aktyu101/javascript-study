@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="display: flex; height: 100%; flex-direction: column">
+      <div style="display: flex; height: 500px">
+        <div
+          id="box"
+          style="height: 100%; width: 200px; background-color: #eee"
+        >
+          <div id="in_box" style="background-color: red; width: 20px"></div>
+        </div>
+        <div
+          id="box2"
+          style="height: 100%; width: 200px; background-color: #999"
+        >
+          <div id="in_box2" style="background-color: blue; width: 20px"></div>
+        </div>
+      </div>
+      <div
+        id="box3"
+        style="background-color: pink; height: 200px; display: flex"
+      >
+        <div id="in_box3" style="height: 20px; background-color: #000"></div>
+      </div>
+    </div>
+    <script>
+      const box = document.querySelector("#box");
+      const box2 = document.querySelector("#box2");
+      const box3 = document.querySelector("#box3");
+      const inbox = document.querySelector("#in_box");
+      const inbox2 = document.querySelector("#in_box2");
+      const inbox3 = document.querySelector("#in_box3");
+
+      const resizeObserver = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          console.log("entry", entry);
+          const id = entry.target.id;
+          const height = entry.contentRect.height;
+          const width = entry.contentRect.width;
+          if (id === "box") {
+            inbox.style.height = `${height}px`;
+          }
+          if (id === "box2") {
+            inbox2.style.height = `${height / 2}px`;
+          }
+          if (id === "box3") {
+            inbox3.style.width = `${width}px`;
+          }
+        }
+      });
+
+      resizeObserver.observe(box);
+      resizeObserver.observe(box2);
+      resizeObserver.observe(box3);
+    </script>
+  </body>
+</html>
